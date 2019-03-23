@@ -36,7 +36,7 @@ function getMiddleCharacter(str) {
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  /*let sentanceInArray*/ word = word.split(" ");
+  word = word.split(" ");
   word = word.map(function(word){
     word = word.split("").reverse().toString().replace(/,/g,"");
     return word;
@@ -47,7 +47,11 @@ function reverseWord(word) {
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Add your code here!
+  words = words.map(function(word){
+    word = word.split("").reverse().toString().replace(/,/g,"");
+    return word;
+  })
+  return words;
 }
 
 function countLinuxUsers(users) {

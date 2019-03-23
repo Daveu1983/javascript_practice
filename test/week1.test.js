@@ -89,7 +89,7 @@ describe("reverseWord", () => {
   });
 });
 
-xdescribe("reverseAllWords", () => {
+  describe("reverseAllWords", () => {
   test("reverses a single word in an array", () => {
     expect(reverseAllWords(["jest"])).toEqual(["tsej"]);
   });
