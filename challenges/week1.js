@@ -36,15 +36,13 @@ function getMiddleCharacter(str) {
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  let sentanceInArray = word.split(" ");
-  sentanceInArray.reverse();
-  sentanceInArray = sentanceInArray.map(function(word){
+  /*let sentanceInArray*/ word = word.split(" ");
+  word = word.map(function(word){
     word = word.split("").reverse().toString().replace(/,/g,"");
     return word;
     })
-  let str = sentanceInArray.toString();
-  str = str.replace(/,/g, " ");
-  return str;
+  word = word.reverse().toString().replace(/,/g, " ");
+  return word;
 }
 
 function reverseAllWords(words) {
