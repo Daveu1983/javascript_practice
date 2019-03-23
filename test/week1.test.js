@@ -23,6 +23,12 @@ describe("capitalize", () => {
   test("capitalizes the first character if the string is a sentence", () => {
     expect(capitalize("the quick fox")).toBe("The quick fox");
   });
+
+  test("undefined gets error", () => {
+    expect(() => { 
+    capitalize();
+    }).toThrowError( new Error("word is required"));
+  });
 });
 
 describe("generateInitials", () => {
