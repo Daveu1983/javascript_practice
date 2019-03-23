@@ -16,13 +16,13 @@ function generateInitials(firstName, lastName) {
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  return parseFloat((originalPrice * ((100 + vatRate) / 100)).toFixed(2)); 
+  return roundNumber((originalPrice * ((100 + vatRate) / 100)),2); 
 }
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-    return parseFloat((originalPrice -   (originalPrice * (reduction / 100))).toFixed(2));
+    return roundNumber((originalPrice -   (originalPrice * (reduction / 100))),2);
 }
 
 function getMiddleCharacter(str) {
@@ -73,7 +73,7 @@ function getMeanScore(scores) {
     count += element;
     
   });
-  return parseFloat((count/scores.length).toFixed(2));
+  return roundNumber((count/scores.length), 2);
 }
 
 function simpleFizzBuzz(n) {
@@ -87,6 +87,11 @@ function simpleFizzBuzz(n) {
   }else {
     return n;
   }
+}
+
+function roundNumber(number, roundedTo){
+
+  return parseFloat((number).toFixed(roundedTo));
 }
 
 module.exports = {
