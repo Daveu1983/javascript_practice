@@ -16,8 +16,6 @@ function generateInitials(firstName, lastName) {
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  //var totalPrice = (originalPrice * ((100 + vatRate) / 100)).toFixed(2);
-  //totalPrice = parseFloat(totalPrice);
   return parseFloat((originalPrice * ((100 + vatRate) / 100)).toFixed(2)); 
 }
 
