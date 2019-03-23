@@ -89,7 +89,7 @@ describe("reverseWord", () => {
   });
 });
 
-  describe("reverseAllWords", () => {
+describe("reverseAllWords", () => {
   test("reverses a single word in an array", () => {
     expect(reverseAllWords(["jest"])).toEqual(["tsej"]);
   });
@@ -101,7 +101,7 @@ describe("reverseWord", () => {
   });
 });
 
-xdescribe("countLinuxUsers", () => {
+describe("countLinuxUsers", () => {
   test("returns 0 if no Linux users found", () => {
     const users = [
       { name: "Heather", OS: "Windows 8", type: "Windows" },
