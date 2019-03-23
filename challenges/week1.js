@@ -9,10 +9,7 @@ function capitalize(word) {
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  let firstInitial = firstName.charAt(0) 
-  let lastInitial = lastName.charAt(0)
-  let initials = firstInitial + "." + lastInitial;
-  return initials;
+  return firstName.charAt(0) + "." + lastName.charAt(0);
 }
 
 
