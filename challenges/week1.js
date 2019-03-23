@@ -39,10 +39,7 @@ function reverseWord(word) {
   let sentanceInArray = word.split(" ");
   sentanceInArray.reverse();
   sentanceInArray = sentanceInArray.map(function(word){
-    word = word.split("");
-    word = word.reverse();
-    word = word.toString();
-    word = word.replace(/,/g,"");
+    word = word.split("").reverse().toString().replace(/,/g,"");
     return word;
     })
   let str = sentanceInArray.toString();
