@@ -2,8 +2,7 @@ function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
   let firstChar = word.charAt(0);
   firstChar = firstChar.toUpperCase();
-  word = firstChar + word.slice(1);
-  return word
+  return firstChar + word.slice(1);
 
 }
 
