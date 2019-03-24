@@ -61,8 +61,7 @@ function countLinuxUsers(users) {
   users = users.filter(function (user){
     if (typeof user !== 'object'){
       throw new Error ("users is required")
-    }
-    if (user.type === "Linux"){
+    } else if (user.type === "Linux"){
       return true;
     }else{
       return false;
