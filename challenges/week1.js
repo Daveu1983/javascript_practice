@@ -1,5 +1,6 @@
 function capitalize(word) {
   if (word === undefined) throw new Error ("word is required");
+  if (typeof word !== 'string') throw new Error("input is not a word");
   let firstChar = word.charAt(0);
   firstChar = firstChar.toUpperCase();
   return firstChar + word.slice(1);

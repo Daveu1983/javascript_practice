@@ -29,6 +29,12 @@ describe("capitalize", () => {
     capitalize();
     }).toThrowError( new Error("word is required"));
   });
+
+  test("not a string gets an error", () => {
+    expect(() => { 
+    capitalize(123456);
+    }).toThrowError( new Error("input is not a word"));
+  });
 });
 
 describe("generateInitials", () => {
