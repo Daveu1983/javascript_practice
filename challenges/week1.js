@@ -70,12 +70,21 @@ function countLinuxUsers(users) {
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
+  checkArrayAllNumbers(scores);
   var count = 0;
   scores.forEach(element => {
     count += element;
     
   });
   return roundNumber((count/scores.length), 2);
+}
+
+function checkArrayAllNumbers(arrayOfNumbers){
+  arrayOfNumbers.forEach(number => {
+    if (typeof number !== 'number'){
+      throw new Error("input is not all numbers")
+    }
+  });
 }
 
 function simpleFizzBuzz(n) {

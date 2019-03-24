@@ -172,6 +172,11 @@ describe("getMeanScore", () => {
   test("returns the mean to 2 decimal places", () => {
     expect(getMeanScore([24, 44, 56, 11, 12, 17, 34])).toBe(28.29);
   });
+  test('both undefined throws an error', () => {
+    expect(() => { 
+      getMeanScore([10,12,"three",5]);
+      }).toThrowError( new Error("input is not all numbers"));
+    });
 });
 
 describe("simpleFizzBuzz", () => {
