@@ -1,14 +1,18 @@
 function capitalize(word) {
-  if (typeof word !== 'string') throw new Error("input is not a word");
+  errorForWords(word);
   let firstChar = word.charAt(0);
   firstChar = firstChar.toUpperCase();
   return firstChar + word.slice(1);
 
 }
 
+function errorForWords(word){
+  if (typeof word !== 'string') throw new Error("input error");
+}
+
 function generateInitials(firstName, lastName) {
-  if (firstName === undefined) throw new Error("firstName is required");
-  if (lastName === undefined) throw new Error("lastName is required");
+errorForWords(firstName);
+errorForWords(lastName);
   return firstName.charAt(0) + "." + lastName.charAt(0);
 }
 

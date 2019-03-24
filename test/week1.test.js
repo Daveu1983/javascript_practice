@@ -27,19 +27,29 @@ describe("capitalize", () => {
   test("undefined gets error", () => {
     expect(() => { 
     capitalize();
-    }).toThrowError( new Error("input is not a word"));
+    }).toThrowError( new Error("input error"));
   });
 
   test("not a string gets an error", () => {
     expect(() => { 
     capitalize(123456);
-    }).toThrowError( new Error("input is not a word"));
+    }).toThrowError( new Error("input error"));
   });
 });
 
 describe("generateInitials", () => {
   test("returns the initials of a firstname and surname", () => {
     expect(generateInitials("Frederic", "Bonneville")).toBe("F.B");
+  });
+  test("not a string gets an error for firstName", () => {
+    expect(() => { 
+    generateInitials(undefined, "Potter");
+    }).toThrowError( new Error("input error"));
+  });
+  test("not a string gets an error for lastName", () => {
+    expect(() => { 
+    generateInitials("Harry", null);
+    }).toThrowError( new Error("input error"));
   });
 });
 
