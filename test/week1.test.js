@@ -161,6 +161,16 @@ describe("countLinuxUsers", () => {
     ];
     expect(countLinuxUsers(users)).toBe(5);
   });
+  test('check a non array errors', () => {
+    expect(() => { 
+      countLinuxUsers(undefined);
+      }).toThrowError( new Error("array is required"));
+  });
+  test('check a non array errors', () => {
+    expect(() => { 
+      countLinuxUsers([2,null,undefined,"brian"]);
+      }).toThrowError( new Error("users is required"));
+  });  
 });
 
 describe("getMeanScore", () => {
@@ -172,11 +182,16 @@ describe("getMeanScore", () => {
   test("returns the mean to 2 decimal places", () => {
     expect(getMeanScore([24, 44, 56, 11, 12, 17, 34])).toBe(28.29);
   });
-  test('both undefined throws an error', () => {
+  test('check array that is not all numbers errors', () => {
     expect(() => { 
       getMeanScore([10,12,"three",5]);
       }).toThrowError( new Error("input is not all numbers"));
     });
+    test('check a non array errors', () => {
+      expect(() => { 
+        getMeanScore(3);
+        }).toThrowError( new Error("input is not array of numbers"));
+      });
 });
 
 describe("simpleFizzBuzz", () => {

@@ -57,8 +57,11 @@ function reverseAllWords(words) {
 }
 
 function countLinuxUsers(users) {
-  if (users === undefined) throw new Error("users is required");
+  if (!(Array.isArray(users))) throw new Error("array is required");
   users = users.filter(function (user){
+    if (typeof user !== 'object'){
+      throw new Error ("users is required")
+    }
     if (user.type === "Linux"){
       return true;
     }else{
@@ -69,7 +72,7 @@ function countLinuxUsers(users) {
 }
 
 function getMeanScore(scores) {
-  if (scores === undefined) throw new Error("scores is required");
+  if (!(Array.isArray(scores))) throw new Error("input is not array of numbers");
   checkArrayAllNumbers(scores);
   var count = 0;
   scores.forEach(element => {
