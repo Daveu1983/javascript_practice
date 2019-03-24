@@ -27,7 +27,7 @@ describe("capitalize", () => {
   test("undefined gets error", () => {
     expect(() => { 
     capitalize();
-    }).toThrowError( new Error("word is required"));
+    }).toThrowError( new Error("input is not a word"));
   });
 
   test("not a string gets an error", () => {
@@ -67,6 +67,11 @@ describe("addVAT", () => {
   test('first input not a number throws an error', () => {
     expect(() => { 
       addVAT(20, null);
+      }).toThrowError( new Error("one of the inputs is not a number"));
+    });
+  test('both undefined throws an error', () => {
+    expect(() => { 
+      addVAT(undefined, undefined);
       }).toThrowError( new Error("one of the inputs is not a number"));
     });
 });

@@ -1,5 +1,4 @@
 function capitalize(word) {
-  if (word === undefined) throw new Error ("word is required");
   if (typeof word !== 'string') throw new Error("input is not a word");
   let firstChar = word.charAt(0);
   firstChar = firstChar.toUpperCase();
@@ -15,8 +14,6 @@ function generateInitials(firstName, lastName) {
 
 
 function addVAT(originalPrice, vatRate) {
-  if (originalPrice === undefined) throw new Error("originalPrice is requied");
-  if (vatRate === undefined) throw new Error("vatRate is required");
   if ((typeof originalPrice !== 'number') || (typeof vatRate !== 'number')) { 
     throw new Error("one of the inputs is not a number");
   }
