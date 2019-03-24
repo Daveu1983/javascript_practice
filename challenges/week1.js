@@ -17,6 +17,9 @@ function generateInitials(firstName, lastName) {
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
+  if ((typeof originalPrice !== 'number') || (typeof vatRate !== 'number')) { 
+    throw new Error("one of the inputs is not a number");
+  }
   return roundNumber((originalPrice * ((100 + vatRate) / 100)),2); 
 }
 

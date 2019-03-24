@@ -59,6 +59,16 @@ describe("addVAT", () => {
   test("adds a VAT of 0% to a price of 25", () => {
     expect(addVAT(25, 0)).toBe(25);
   });
+  test('first input not a number throws an error', () => {
+    expect(() => { 
+      addVAT("blah", 2);
+      }).toThrowError( new Error("one of the inputs is not a number"));
+    });
+  test('first input not a number throws an error', () => {
+    expect(() => { 
+      addVAT(20, null);
+      }).toThrowError( new Error("one of the inputs is not a number"));
+    });
 });
 
 describe("getSalePrice", () => {
