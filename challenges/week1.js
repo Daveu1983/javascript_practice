@@ -63,8 +63,6 @@ function countLinuxUsers(users) {
       throw new Error ("users is required")
     } else if (user.type === "Linux"){
       return true;
-    }else{
-      return false;
     }
   })
   return users.length;
