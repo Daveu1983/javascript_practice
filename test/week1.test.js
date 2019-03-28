@@ -8,7 +8,8 @@ const {
   reverseAllWords,
   countLinuxUsers,
   getMeanScore,
-  simpleFizzBuzz
+  simpleFizzBuzz,
+  roundNumber
 } = require("../challenges/week1");
 
 describe("capitalize", () => {
@@ -211,3 +212,12 @@ describe("simpleFizzBuzz", () => {
     expect(simpleFizzBuzz(15)).toBe("fizzbuzz");
   });
 });
+describe("test rounded number function", () => {
+  test("returns number to 4 decimal places", () =>{
+    expect(roundNumber(3.45678,4)).toBe(3.4568);
+  });
+  test("returns number to 0 decimal places", () =>{
+    expect(roundNumber(1000.34567,0)).toBe(1000);
+  });
+});
+

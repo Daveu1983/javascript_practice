@@ -115,5 +115,6 @@ module.exports = {
   reverseAllWords,
   countLinuxUsers,
   getMeanScore,
-  simpleFizzBuzz
+  simpleFizzBuzz,
+  roundNumber
 };
