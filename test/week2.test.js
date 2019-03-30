@@ -6,7 +6,7 @@ const {
   hasMPostCode
 } = require("../challenges/week2");
 
-xdescribe("getFillings", () => {
+describe("getFillings", () => {
   test("returns the fillings of a sandwich", () => {
     const sandwich = {
       bread: "Sourdough",
