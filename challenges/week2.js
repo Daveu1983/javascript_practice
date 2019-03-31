@@ -23,8 +23,9 @@ function countSheep(arr) {
 
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
-  // Your code here!
+  return ((person.address.postCode.charAt(0) === "M") && (!(isNaN(parseInt(person.address.postCode.charAt(1))))))
 }
+
 
 module.exports = {
   getFillings,
