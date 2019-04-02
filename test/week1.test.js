@@ -167,7 +167,7 @@ describe("countLinuxUsers", () => {
       countLinuxUsers(undefined);
       }).toThrowError( new Error("array is required"));
   });
-  test('check a non user errors', ([2,null,undefined,"brian"].forEach((item) => {
+  test('check a non user errors', ([[2],[undefined],["brian"]].forEach((item) => {
     expect(() => { 
         countLinuxUsers(item);
         }).toThrowError( new Error("users is required"));
