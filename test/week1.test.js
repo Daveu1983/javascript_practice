@@ -167,11 +167,11 @@ describe("countLinuxUsers", () => {
       countLinuxUsers(undefined);
       }).toThrowError( new Error("array is required"));
   });
-  test('check a non user errors', () => {
+  test('check a non user errors', ([2,null,undefined,"brian"].forEach((item) => {
     expect(() => { 
-      countLinuxUsers([2,null,undefined,"brian"]);
-      }).toThrowError( new Error("users is required"));
-  });  
+        countLinuxUsers(item);
+        }).toThrowError( new Error("users is required"));
+  })));  
 });
 
 describe("getMeanScore", () => {
