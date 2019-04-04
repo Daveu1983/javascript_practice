@@ -168,7 +168,10 @@ describe("countLinuxUsers", () => {
       }).toThrowError( new Error("array is required"));
   });
   test('check a non user errors', () => {
-    [[2],[null],[undefined],["brian"]].forEach((item) => {
+    [[2,{ name: "Heather", OS: "Ubuntu 18.04", type: "Linux" }],
+    [{ name: "Paul", OS: "Ubuntu 16.04", type: "Linux" },null],
+    [undefined,{ name: "David", OS: "Fedora 28", type: "Linux" }],
+    [{ name: "Pedro", OS: "Windows 95", type: "Windows" },"brian"]].forEach((item) => {
     expect(() => { 
         countLinuxUsers(item);
         }).toThrowError( new Error("users is required"));
