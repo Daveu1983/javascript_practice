@@ -59,7 +59,7 @@ function reverseAllWords(words) {
 function countLinuxUsers(users) {
   if (!(Array.isArray(users))) throw new Error("array is required");
   users = users.filter(function (user){
-    if (typeof user !== 'object'){
+    if ((typeof user !== 'object') || (user === null)) {
       throw new Error ("users is required")
     } else return (user.type === "Linux");
   })
