@@ -32,7 +32,13 @@ function getTotalSubjects(people) {
 function checkIngredients(menu, ingredient) {
   if (!menu) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  // Your code here!
+  let yayOrNay = false;
+  menu.forEach(element => {
+    if(element.ingredients.indexOf(ingredient) > -1) {
+      yayOrNay = true;
+    }
+  });
+  return yayOrNay;
 }
 
 function duplicateNumbers(arr1, arr2) {
