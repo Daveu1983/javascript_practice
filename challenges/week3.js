@@ -1,6 +1,10 @@
 function getSquares(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here!
+  nums = nums.map(function(number){
+    number = Math.pow(number,2);
+    return number;
+  })
+  return nums;
 }
 
 function camelCaseWords(words) {
@@ -17,8 +21,7 @@ function camelCaseWords(words) {
 }
 
 function getTotalSubjects(people) {
-  if (!people) throw new Error("people is required");
-  // Your code here!
+  if (!people) throw new Error("people is required");  
 }
 
 function checkIngredients(menu, ingredient) {
