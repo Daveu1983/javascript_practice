@@ -5,7 +5,15 @@ function getSquares(nums) {
 
 function camelCaseWords(words) {
   if (!words) throw new Error("words is required");
-  // Your code here!
+  if(words.length < 2){
+    return words.toString();
+  }else{
+    let camelCase = [];
+    for(let i = 1; i<(words.length); i++){
+      camelCase.push(words[i].charAt(0).toUpperCase() + words[i].slice(1));
+    }
+    return words[0].toString() + camelCase.toString().replace(/,/g, "");
+  }
 }
 
 function getTotalSubjects(people) {
