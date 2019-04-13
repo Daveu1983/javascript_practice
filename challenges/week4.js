@@ -20,7 +20,10 @@ function findNamesBeginningWith(names, char) {
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  // Your code here
+  words = words.filter(function(word){
+    return ((word.charAt(0) === 't')&&(word.charAt(1) === 'o')&&(word.charAt(2) === ' '))
+  });
+  return words;
 }
 
 function getIntegers(nums) {
