@@ -53,7 +53,12 @@ function getSquareRoots(nums) {
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  // Your code here
+  sentences = sentences.filter(function(sentence){
+    str = str.toUpperCase();
+    sentence = sentence.toUpperCase();
+    return(sentence.search(str) > -1);
+  })
+  return sentences;
 }
 
 function getLongestSides(triangles) {
