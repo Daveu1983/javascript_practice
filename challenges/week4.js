@@ -36,7 +36,10 @@ function getIntegers(nums) {
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
-  // Your code here
+  users = users.map(function(user){
+    return user.data.city.displayName;
+  })
+  return users;
 }
 
 function getSquareRoots(nums) {
