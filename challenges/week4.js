@@ -9,7 +9,13 @@ function findSmallNums(nums) {
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  // Your code here
+  let namesBeginningWithChar = [];
+  names.forEach(element => {
+    if(element.charAt(0) === char){
+      namesBeginningWithChar.push(element);
+    }
+  });
+  return namesBeginningWithChar;
 }
 
 function findVerbs(words) {
