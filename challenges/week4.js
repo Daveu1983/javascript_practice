@@ -28,7 +28,10 @@ function findVerbs(words) {
 
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
+  nums = nums.filter(function(num){
+    return((num % 1) === 0);
+  })
+  return nums;
 }
 
 function getCities(users) {
