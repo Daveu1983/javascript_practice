@@ -10,7 +10,18 @@ const findNextNumber = (nums, n) => {
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
+  let numberOfZero = 0;
+  let numberOfOne = 0;
+  let arr = str.split("")
+  arr.forEach(element => {
+    if (element === "1"){
+      numberOfOne++;
+    }
+    if(element ===   "0"){
+      numberOfZero++;
+    }
+  });
+  return {0: numberOfZero, 1:numberOfOne}
 };
 
 const reverseNumber = n => {
