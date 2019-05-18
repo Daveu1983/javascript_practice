@@ -19,6 +19,14 @@ const sumMultiples = arr => {
  */
 const isValidDNA = str => {
   if (!str) throw new Error("str is required");
+  str = str.split("");
+  let isDNA = true;
+  str.forEach(element => {
+    if((element !== "C")&&(element !== "A")&&(element !== "G")&&(element !== "T")){
+      isDNA = false;
+    }
+  });
+  return isDNA;
 };
 
 /**

@@ -15,3 +15,11 @@ describe("sumMultiples", () => {
         expect(sumMultiples([2, 11, 8, 13, 1, 16])).toBe(0);
     });
 });
+describe("isValidDNA", () => {
+    test("returns true as only characters C, G, T, A are used", () => {
+        expect(isValidDNA("CGTAAGCATCGA")).toBe(true);
+    });
+    test("returns false as not only characters C, G, T, A are used", () => {
+        expect(isValidDNA("CGTAAGBCATCGA")).toBe(false);
+    });
+});
