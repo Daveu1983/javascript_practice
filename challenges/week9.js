@@ -36,6 +36,23 @@ const isValidDNA = str => {
  */
 const getComplementaryDNA = str => {
   if (!str) throw new Error("str is required");
+  if(!(isValidDNA(str))) throw new Error("not valid DNA")
+  str = str.split("");
+  str = str.map((item) =>{
+    if(item === "C"){
+      return "A"
+    }
+    if(item === "A"){
+      return "C"
+    }
+    if(item === "G"){
+      return "T"
+    }
+    if(item === "T"){
+      return "G"
+    }
+  })
+  return str.join("");
 };
 
 /**

@@ -23,3 +23,15 @@ describe("isValidDNA", () => {
         expect(isValidDNA("CGTAAGBCATCGA")).toBe(false);
     });
 });
+
+describe("getComplementaryDNA", () => {
+    test("returns the Complementary DNA", () => {
+      expect(getComplementaryDNA("CAGT")).toBe("ACTG");
+    });
+
+    test('returns error when not valid DNA', () => {
+      expect(() => { 
+        getComplementaryDNA("CAGTB");
+        }).toThrowError( new Error("not valid DNA"));
+      });
+  });
