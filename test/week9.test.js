@@ -54,3 +54,33 @@ describe("is it prime", () => {
         expect(isItPrime("24862100")).toBe(false);
       });
   });
+
+describe("create a matrix", () => {
+    test("returns array matrix of words", () => {
+        expect(createMatrix(3,"foo")).toEqual([["foo","foo", "foo"],["foo","foo", "foo"],["foo","foo", "foo"]]);
+    });
+    test("returns array matrix of words", () => {
+        expect(createMatrix(10,"It's there")).toEqual([
+            ["It's there","It's there","It's there","It's there","It's there",
+            "It's there","It's there","It's there","It's there","It's there"],
+            ["It's there","It's there","It's there","It's there","It's there",
+            "It's there","It's there","It's there","It's there","It's there"],
+            ["It's there","It's there","It's there","It's there","It's there",
+            "It's there","It's there","It's there","It's there","It's there"],
+            ["It's there","It's there","It's there","It's there","It's there",
+            "It's there","It's there","It's there","It's there","It's there"],
+            ["It's there","It's there","It's there","It's there","It's there",
+            "It's there","It's there","It's there","It's there","It's there"],
+            ["It's there","It's there","It's there","It's there","It's there",
+            "It's there","It's there","It's there","It's there","It's there"],
+            ["It's there","It's there","It's there","It's there","It's there",
+            "It's there","It's there","It's there","It's there","It's there"],
+            ["It's there","It's there","It's there","It's there","It's there",
+            "It's there","It's there","It's there","It's there","It's there"],
+            ["It's there","It's there","It's there","It's there","It's there",
+            "It's there","It's there","It's there","It's there","It's there"],
+            ["It's there","It's there","It's there","It's there","It's there",
+            "It's there","It's there","It's there","It's there","It's there"],
+            ]);
+    });
+});
