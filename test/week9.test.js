@@ -29,6 +29,10 @@ describe("getComplementaryDNA", () => {
       expect(getComplementaryDNA("CAGT")).toBe("ACTG");
     });
 
+    test("returns the Complementary DNA", () => {
+        expect(getComplementaryDNA("CAGTTGACTGGTC")).toBe("ACTGGTCAGTTGA");
+      });
+
     test('returns error when not valid DNA', () => {
       expect(() => { 
         getComplementaryDNA("CAGTB");
