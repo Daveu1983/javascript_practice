@@ -84,3 +84,23 @@ describe("create a matrix", () => {
             ]);
     });
 });
+describe("are we covered", () => {
+    test("returns true if three people are woking that day", () => {
+      const staff = [
+          {name: "Sally", rota:["Wednesday", "Sunday", "Friday"]},
+          {name: "Brian", rota:["Monday", "Tuesday", "Saturday"]},
+          {name: "Steve", rota:["Monday", "Tuesday", "Friday"]},
+          {name: "Karl", rota:["Thursday", "Tuesday", "Friday"]}
+      ]  
+      expect(areWeCovered(staff, "Tuesday")).toBe(true);
+    });
+    test("returns true if three people are woking that day", () => {
+        const staff = [
+            {name: "Sally", rota:["Wednesday", "Sunday", "Friday"]},
+            {name: "Brian", rota:["Monday", "Tuesday", "Saturday"]},
+            {name: "Steve", rota:["Monday", "Tuesday", "Friday"]},
+            {name: "Karl", rota:["Thursday", "Tuesday", "Friday"]}
+        ]  
+        expect(areWeCovered(staff, "Wednesday")).toBe(false);
+      });
+});
