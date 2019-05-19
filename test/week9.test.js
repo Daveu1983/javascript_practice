@@ -39,3 +39,18 @@ describe("getComplementaryDNA", () => {
         }).toThrowError( new Error("not valid DNA"));
       });
   });
+
+describe("is it prime", () => {
+    test("returns true if a number is prime", () => {
+      expect(isItPrime("7919")).toBe(true);
+    });
+    test("returns true if a number is prime", () => {
+        expect(isItPrime("13")).toBe(true);
+      });
+    test("returns false if a number is prime", () => {
+        expect(isItPrime("120")).toBe(false);
+      });
+    test("returns true if a number is prime", () => {
+        expect(isItPrime("24862100")).toBe(false);
+      });
+  });
