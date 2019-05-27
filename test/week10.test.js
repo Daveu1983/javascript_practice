@@ -1,9 +1,10 @@
 const {
     sumDigits,
     createRange,
+    getScreentimeAlertList
   } = require("../challenges/week10");
 
-  describe("sumDigits", () => {
+describe("sumDigits", () => {
     test("adds up all digits", () => {
         expect(sumDigits(9375110)).toBe(26)
     });
@@ -37,5 +38,49 @@ describe("create a range of numbers", () => {
             createRange(0,0,9);
             }).toThrowError( new Error("end or step cannot be zero"));
         });
-
+    });
+describe("getScreentimeAlertList", () => {
+    test("return a list of users whose screen time is 100 minutes or over", () => {
+        const users = [
+            {
+                username: "beth_1234",
+                name: "Beth Smith",
+                screenTime: [
+                             { date: "2019-05-01", usage: { twitter: 34, instagram: 22, facebook: 40} },
+                             { date: "2019-05-02", usage: { twitter: 56, instagram: 40, facebook: 31} },
+                             { date: "2019-05-03", usage: { twitter: 12, instagram: 15, facebook: 19} },
+                             { date: "2019-05-04", usage: { twitter: 10, instagram: 56, facebook: 61} },
+                            ]
+               },
+               {
+                username: "brad_Jones87",
+                name: "Brad Jones",
+                screenTime: [
+                             { date: "2019-05-04", usage: { mapMyRun: 40, whatsApp: 40, facebook: 9, safari: 10} },
+                             { date: "2019-06-13", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 16} },
+                             { date: "2019-06-14", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 31} },
+                            ]
+               },
+               {
+                username: "Ryan_Giggs92",
+                name: "Ryan Giggs",
+                screenTime: [
+                             { date: "2019-05-04", usage: { mapMyRun: 50, whatsApp: 10, facebook: 30, safari: 10} },
+                             { date: "2019-06-13", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 16} },
+                             { date: "2019-06-14", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 31} },
+                            ]
+               },
+               {
+                username: "Fred_Flinstone12",
+                name: "Fred Flinstone",
+                screenTime: [
+                             { date: "2019-06-11", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 10} },
+                             { date: "2019-06-13", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 16} },
+                             { date: "2019-05-04", usage: { mapMyRun: 90, whatsApp: 0, facebook: 0, safari: 31} },
+                            ]
+               },
+             ]
+        expect(getScreentimeAlertList(users, "2019-05-04")).toEqual(["beth_1234", "Ryan_Giggs92", 
+        "Fred_Flinstone12"])
+    });
 });
