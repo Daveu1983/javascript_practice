@@ -1,7 +1,8 @@
 const {
     sumDigits,
     createRange,
-    getScreentimeAlertList
+    getScreentimeAlertList,
+    hexToRGB
   } = require("../challenges/week10");
 
 describe("sumDigits", () => {
@@ -84,3 +85,10 @@ describe("getScreentimeAlertList", () => {
         "Fred_Flinstone12"])
     });
 });
+describe("HEX TO RGB", () => {
+    test("converts hex to rgb", () => {
+        expect(hexToRGB("FF1133")).toBe("rgb(255,17,51)")
+    });
+
+});
+
