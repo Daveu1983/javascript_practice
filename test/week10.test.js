@@ -89,6 +89,15 @@ describe("HEX TO RGB", () => {
     test("converts hex to rgb", () => {
         expect(hexToRGB("FF1133")).toBe("rgb(255,17,51)")
     });
+    test("converts hex to rgb", () => {
+        expect(hexToRGB("010101")).toBe("rgb(1,1,1)")
+    });
+    test("converts hex to rgb", () => {
+        expect(hexToRGB("A1B2C3")).toBe("rgb(161,178,195)")
+    });
+    test("converts hex to rgb", () => {
+        expect(hexToRGB("DD1E3D")).toBe("rgb(221,30,61)")
+    });
 
 });
 
