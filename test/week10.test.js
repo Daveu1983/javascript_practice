@@ -2,7 +2,8 @@ const {
     sumDigits,
     createRange,
     getScreentimeAlertList,
-    hexToRGB
+    hexToRGB,
+    findWinner
   } = require("../challenges/week10");
 
 describe("sumDigits", () => {
@@ -98,6 +99,95 @@ describe("HEX TO RGB", () => {
     test("converts hex to rgb", () => {
         expect(hexToRGB("DD1E3D")).toBe("rgb(221,30,61)")
     });
-
+});
+describe("find the winner", () => {
+    test("x's won", () => {
+        const board = [
+            ["X", "X",  "X"],
+            [null, null, "0"],
+            ["X", null, "0"]
+        ]
+        expect(findWinner(board)).toBe("X")
+    });
+    test("0's won", () => {
+        const board = [
+            [null, null,  "X"],
+            ["0", "0", "0"],
+            ["X", null, "0"]
+        ]
+        expect(findWinner(board)).toBe("0")
+    })
+    test("x's won", () => {
+        const board = [
+            [null, null,  "0"],
+            [null, "0", "0"],
+            ["X", "X", "X"]
+        ]
+        expect(findWinner(board)).toBe("X")
+    });
+    test("x's won", () => {
+        const board = [
+            ["X", null,  "0"],
+            ["X", "0", "0"],
+            ["X", null, null]
+        ]
+        expect(findWinner(board)).toBe("X")
+    });
+    test("x's won", () => {
+        const board = [
+            [null, "X",  "0"],
+            ["0", "X", "0"],
+            [null,"X" , null]
+        ]
+        expect(findWinner(board)).toBe("X")
+    });
+    test("0's won", () => {
+        const board = [
+            ["X", null,  "0"],
+            ["X", "0", "0"],
+            [null, null, "0"]
+        ]
+        expect(findWinner(board)).toBe("0")
+    });
+    test("x's won", () => {
+        const board = [
+            [null, "X",  "0"],
+            ["0", "X", "0"],
+            [null,"X" , null]
+        ]
+        expect(findWinner(board)).toBe("X")
+    });
+    test("0's won", () => {
+        const board = [
+            ["X", null,  "0"],
+            ["X", "0", "0"],
+            [null, null, "0"]
+        ]
+        expect(findWinner(board)).toBe("0")
+    });
+    test("x's won", () => {
+        const board = [
+            ["X", null,  "0"],
+            ["0", "X", "0"],
+            [null,null, "X"]
+        ]
+        expect(findWinner(board)).toBe("X")
+    });
+    test("0's won", () => {
+        const board = [
+            ["X", null,  "0"],
+            ["X", "0", null],
+            ["0", null, "0"]
+        ]
+        expect(findWinner(board)).toBe("0")
+    });
+    test("no one won", () => {
+        const board = [
+            [null, "X",  "0"],
+            ["X", null, "X"],
+            ["0", null, "0"]
+        ]
+        expect(findWinner(board)).toBe(null)
+    });
 });
 

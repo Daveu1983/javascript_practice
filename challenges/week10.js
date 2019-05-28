@@ -115,7 +115,43 @@ const hexToRGB = hexStr => {
  */
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
+  let winner = null;
+  board.forEach((element) =>{
+    if((element[0] === element[1])&& (element[0] === element[2])){
+      winner = getWinner(element[0], winner);
+    }
+  });
+  let rowOne = board[0];
+  let rowTwo = board[1];
+  let rowThree= board[2];
+
+  if((rowOne[0] === rowTwo[0]) && (rowOne[0] === rowThree[0])){
+    winner = getWinner(rowOne[0], winner);
+  }
+  if((rowOne[1] === rowTwo[1]) && (rowOne[1] === rowThree[1])) {
+    winner = getWinner(rowOne[1], winner);
+  }
+  if((rowOne[2] === rowTwo[2]) && (rowOne[2] === rowThree[2])) {
+    winner = getWinner(rowOne[2], winner);
+  }
+  if((rowOne[0] === rowTwo[1]) && (rowOne[0] === rowThree[2])){
+    winner = getWinner(rowOne[0], winner);
+  }
+  if((rowOne[2] === rowTwo[1]) && (rowOne[2] === rowThree[0])) {
+    winner = getWinner(rowOne[2], winner);
+  }
+  return winner
 };
+
+function getWinner(element, winner) {
+  if (element === "X") {
+    winner = "X";
+  }
+  if (element === "0") {
+    winner = "0";
+  }
+  return winner;
+}
 
 module.exports = {
   sumDigits,
@@ -124,3 +160,5 @@ module.exports = {
   hexToRGB,
   findWinner
 };
+
+
