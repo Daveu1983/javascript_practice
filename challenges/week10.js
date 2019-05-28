@@ -93,127 +93,14 @@ const getScreentimeAlertList = (users, date) => {
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
   hexStr = hexStr.split("");
-  const twoDigHexToDecConverter = arr => {
-    let arr2 = []
-    if (arr[0] === "0"){
-    arr2.push(0)
-   }
-   if (arr[0] === "1"){
-    arr2.push(1)
-   }
-   if (arr[0] === "2"){
-    arr2.push(2)
-   }
-   if (arr[0] === "3"){
-    arr2.push(3)
-   }
-   if (arr[0] === "4"){
-    arr2.push(4)
-   }
-   if (arr[0] === "5"){
-    arr2.push(5)
-   }
-   if (arr[0] === "6"){
-    arr2.push(6)
-   }
-   if (arr[0] === "7"){
-    arr2.push(7)
-   }
-   if (arr[0] === "8"){
-    arr2.push(8)
-   }
-   if (arr[0] === "9"){
-    arr2.push(9)
-   }
-   if (arr[0] === "A"){
-    arr2.push(10)
-   }
-   if (arr[0] === "B"){
-    arr2.push(11)
-   }
-   if (arr[0] === "C"){
-    arr2.push(12)
-   }
-   if (arr[0] === "D"){
-    arr2.push(13)
-   }
-   if (arr[0] === "E"){
-    arr2.push(14)
-   }
-   if (arr[0] === "F"){
-    arr2.push(15)
-   }
-   arr2[0] = arr2[0] * 16;
-
-   if (arr[1] === "0"){
-    arr2[0] = arr2[0]+ 0;
-   }
-   if (arr[0] === "1"){
-    arr2[0] = arr2[0]+ 1
-   }
-   if (arr[0] === "2"){
-    arr2[0] = arr2[0]+ 2;
-   }
-   if (arr[0] === "3"){
-    arr2[0] = arr2[0]+ 3
-   }
-   if (arr[0] === "4"){
-    arr2[0] = arr2[0]+ 4
-   }
-   if (arr[0] === "5"){
-    arr2[0] = arr2[0]+ 5
-   }
-   if (arr[0] === "6"){
-    arr2[0] = arr2[0]+ 6
-   }
-   if (arr[0] === "7"){
-    arr2[0] = arr2[0]+ 7
-   }
-   if (arr[0] === "8"){
-    arr2[0] = arr2[0]+ 8
-   }
-   if (arr[0] === "9"){
-    arr2[0] = arr2[0]+ 9
-   }
-   if (arr[0] === "A"){
-    arr2[0] = arr2[0]+ 10
-   }
-   if (arr[0] === "B"){
-    arr2[0] = arr2[0]+ 11
-   }
-   if (arr[0] === "C"){
-    arr2[0] = arr2[0]+ 12
-   }
-   if (arr[0] === "D"){
-    arr2[0] = arr2[0]+ 13
-   }
-   if (arr[0] === "E"){
-    arr2[0] = arr2[0]+ 14
-   }
-   if (arr[0] === "F"){
-    arr2[0] = arr2[0]+ 15
-   }
-   return arr2.reduce((a, b) => a + b)
-  }
-
-
   let redHex = hexStr[0] + hexStr[1];
   let blueHex = hexStr[2] + hexStr[3];
   let greenHex = hexStr[4] + hexStr[5];
-
-  redHex = redHex.split("")
-  blueHex = blueHex.split("")
-  greenHex = greenHex.split("")
-
-  redHex = twoDigHexToDecConverter(redHex)
-  blueHex = twoDigHexToDecConverter(blueHex)
-  greenHex = twoDigHexToDecConverter(greenHex)
+  redHex = parseInt(redHex,16)
+  blueHex = parseInt(blueHex,16)
+  greenHex = parseInt(greenHex,16)
 
   return("rgb(" + redHex + "," + blueHex + "," + greenHex + ")") 
-
-
-
-
 };
 
 /**
